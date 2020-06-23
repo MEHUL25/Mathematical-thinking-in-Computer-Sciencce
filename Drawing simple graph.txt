@@ -1,0 +1,30 @@
+import networkx as nx
+import pygraphviz as pgv
+from nxpd import draw, nxpdParams
+nxpdParams['show'] = 'ipynb'
+
+
+G = nx.DiGraph()
+G.add_edge("a", "b")
+G.add_edge("b", "c")
+G.add_edge("c", "d")
+G.add_edge("d", "e")
+G.add_edge("e", "c")
+G.add_edge("a", "d")
+
+
+
+
+#Now, let's draw it. We first draw it using circular layout.
+
+draw(G, layout='circo')
+
+
+#Then, let's use a layered layout.
+
+draw(G, layout='dot')
+
+
+#Finally, let's draw it using a different layout.
+
+draw(G, layout='neato')

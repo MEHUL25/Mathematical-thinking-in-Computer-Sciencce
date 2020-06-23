@@ -1,0 +1,17 @@
+def is_even(p):
+  c=0
+  s=0
+  n=len(p)
+  for i in range (n):
+    if p[i] != i:
+      for j in range(n):
+        if p[j]==i:
+          t=p[i]
+          p[i]=p[j]
+          p[j]=t
+      c=c+1
+  if c%2 == 0:
+    return True
+  else:
+    return False
+  
